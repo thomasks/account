@@ -24,12 +24,13 @@ public class AccountType {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	
 	@Column(name = "partner")
 	private Long partner;
 	
 	//账户类别
-	@Column(name = "account_type_id")
-	private Long accountTypeId;
+	@Column(name = "account_type")
+	private Long accountType;
 	
 	//账户类别名称
 	@Column(name = "account_type_name")
@@ -48,6 +49,7 @@ public class AccountType {
 	private String balanceBy;
 	
 	//账户内容:货币,积分
+	//暂未启用,若需与会计系统集成则配置指定的账户
 	@Column(name = "acct_content")
 	private Long acctContent;
 	
@@ -55,5 +57,12 @@ public class AccountType {
 	@Column(name = "acct_seq")
 	private String accountSeq;
 	
+	//客户是否可见
+	@Column(name = "cust_view")
+	private Boolean custView;
+	
+	//生成账户级别
+	//1--总账,2--明细账户,3--明细账字目
+	private Long level;
 	
 }

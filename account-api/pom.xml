@@ -6,4 +6,12 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>account-api</artifactId>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>cn.freeexchange</groupId>
+  		<artifactId>common-base</artifactId>
+  	</dependency>
+  </dependencies>
+  
 </project>

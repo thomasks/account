@@ -8,4 +8,13 @@
   <artifactId>account-dto</artifactId>
   <name>account dto</name>
   <description>账户数据传输对象</description>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>cn.freeexchange</groupId>
+  		<artifactId>common-base</artifactId>
+  	</dependency>
+  
+  </dependencies>
+  
 </project>

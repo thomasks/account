@@ -12,6 +12,11 @@
   		<groupId>cn.freeexchange</groupId>
   		<artifactId>common-base</artifactId>
   	</dependency>
+  	
+  	<dependency>
+  		<groupId>cn.freeexchange</groupId>
+  		<artifactId>account-dto</artifactId>
+  	</dependency>
   
   </dependencies>
   

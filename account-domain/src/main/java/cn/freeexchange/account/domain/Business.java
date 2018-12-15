@@ -1,12 +1,16 @@
 package cn.freeexchange.account.domain;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -56,6 +60,24 @@ public class Business {
 
     @Column(name = "logic_delete")
     private Boolean logicDelete = false;
+    
+    @ManyToMany
+    @JoinTable(name = "tb_business_account_type",schema="account",
+    	joinColumns=@JoinColumn(name="business_id"),
+    	inverseJoinColumns=@JoinColumn(name="account_type_id")
+    )
+    private List<AccountType> accountTypes;
+    
+    
+    public boolean canOpenAccount() {
+    	if(!oprType.equalsIgnoreCase("OPEN_ACCOUNT")) {
+    		return false;
+    	}
+    	if(accountTypes == null || accountTypes.size() <1) {
+    		return false;
+    	}
+    	return true;
+    }
 	
 
 }
